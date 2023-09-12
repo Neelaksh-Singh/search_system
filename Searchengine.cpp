@@ -16,16 +16,19 @@ int main(int argc, char **argv){
     if(read_sizes(&linecounter, &maxlength, argv[2])==-1)
         return -1;
     Mymap *mymap = new Mymap(linecounter,maxlength);
-    if(read_input(mymap, argv[2])==-1){
+    Trienode *trie = new Trienode();
+
+    if(read_input(mymap, trie, argv[2])==-1){
         delete(mymap);
         return -1;
     }
     cout<<"Initialization finised"<<endl;
-    for(int i=0;i<mymap->getsize();i++){
-        mymap->print(i);
-    }
+    // for(int i=0;i<mymap->getsize();i++){
+    //     mymap->print(i);
+    // }
     // cout<<"Line counter: "<< linecounter<<"\nMax length: "<<maxlength<<endl;
     delete(mymap);
+    delete(trie);
     return 1;    
     
 }
