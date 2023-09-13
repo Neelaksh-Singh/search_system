@@ -17,3 +17,20 @@ void Listnode::add(int d_id){
     
     }
 }
+
+int Listnode::search(int d_id){
+    if(d_id==id)
+        return times;
+    else{
+        if(next==NULL)
+            return 0;
+        return next->search(d_id);
+    }
+} 
+
+int Listnode::volume(){
+    if(next==NULL)
+        return 1;
+    else
+        return 1 + next->volume();
+}

@@ -1,7 +1,9 @@
 CC = g++
 default: searchengine clean
-searchengine: Searchengine.o Readinput.o Map.o Trienode.o Listnode.o
-	$(CC) -o searchengine Searchengine.o Readinput.o Map.o Trienode.o Listnode.o
+searchengine: Searchengine.o Readinput.o Map.o Trienode.o Listnode.o Search.o
+	$(CC) -o searchengine Searchengine.o Readinput.o Map.o Trienode.o Listnode.o Search.o
+Search.o: Search.cpp Search.h
+	$(CC) -c Search.cpp
 Listnode.o: Listnode.cpp Listnode.h
 	$(CC) -c Listnode.cpp
 Trienode.o: Trienode.cpp Trienode.h
