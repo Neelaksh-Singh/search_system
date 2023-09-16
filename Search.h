@@ -3,6 +3,11 @@
 #include <cstring>
 #include "Trienode.h"
 #include "Map.h"
+#include "cmath"
+#include "Scorelist.h"
+#include "Maxheap.h"
+#include "sys/ioctl.h"
+#include <unistd.h>
 
 using namespace std;
 

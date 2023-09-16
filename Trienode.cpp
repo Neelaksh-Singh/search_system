@@ -96,3 +96,20 @@ int Trienode::tfsearchword(int id, char* word, int curr){
         return sibling->tfsearchword(id,word,curr);
     }
 }
+
+void Trienode::search(char* word, int curr, Scorelist* scorelist){
+    if(word[curr]==letter){
+        if(curr==strlen(word)-1){
+            if(list!=NULL)
+                list->passdocument(scorelist);
+            else
+                return;
+        }
+        else{
+            if(child!=NULL)
+                child->search(word,curr+1,scorelist);
+        }
+    }
+    if(sibling!=NULL)
+        sibling->search(word,curr,scorelist);
+}

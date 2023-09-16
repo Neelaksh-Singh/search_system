@@ -1,6 +1,7 @@
 #include <iostream>
 #include <cstdlib>
 #include <cstring>
+#include "Scorelist.h"
 
 #ifndef LISTNODE_H
 #define LISTNODE_H
@@ -15,5 +16,6 @@ public:
     void add(int d_id);
     int search(int d_id);
     int volume();
+    void passdocument(Scorelist* scorelist);
 };
 #endif

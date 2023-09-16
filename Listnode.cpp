@@ -34,3 +34,10 @@ int Listnode::volume(){
     else
         return 1 + next->volume();
 }
+
+void Listnode::passdocument(Scorelist* scorelist){
+    
+    scorelist->insert(id);
+    if(next!=NULL)
+        next->passdocument(scorelist);
+}
